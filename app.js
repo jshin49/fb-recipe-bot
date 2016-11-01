@@ -398,7 +398,7 @@ function receivedMessage(event, res, error) {
       }
       // Search by Ingredients
       // Implement Spoonacular
-      else {
+      else if (res.parameters.hasOwnProperty('ingredient1')) {
         var ingredients = [];
         var keys = Object.keys(res.parameters);
         for (var key=1; key<=keys.length; ++key) {
@@ -470,9 +470,12 @@ function receivedMessage(event, res, error) {
           } //end outer for
         });
       }
+      else {
+        sendTextMessage(senderID, res.speechResponse + " You can maybe ask 'What\'s Dinner?'");
+      }
     }
     else {
-      sendTextMessage(senderID, "Please ask 'What\'s Dinner?'");
+      sendTextMessage(senderID, res.speechResponse + " You can maybe ask 'What\'s Dinner?'");
     }
   } 
   else if (messageAttachments) {
