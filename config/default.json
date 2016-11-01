@@ -1,0 +1,12 @@
+{
+  "herokuBaseUrl": "YOUR HEROKU URL WITH TRAILING SLASH",
+  "ngrokBaseUrl": "YOUR NGROK URL WITH TRAILING SLASH",
+  "apiAiKey": "YOUR API.AI API KEY",
+  "spoonacularAPIKey": "YOUR SPOONACULAR API KEY",
+  "spoonacularAPIBaseURL": "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/",
+  "appID": "YOUR FACEBOOK APP ID",
+  "pageID": "YOUR FACEBOOK PAGE ID",
+  "appSecret": "YOUR FACEBOOK APP SECRET",
+  "pageAccessToken": "YOUR FACEBOOK PAGE ACCESS TOKEN",
+  "validationToken": "just_do_it"
+}
