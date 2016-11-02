@@ -398,7 +398,7 @@ function receivedMessage(event, res, error) {
       }
       // Search by Ingredients
       // Implement Spoonacular
-      else if (res.parameters.hasOwnProperty('ingredient1')) {
+      else if (res.parameters.hasOwnProperty('ingredients1')) {
         var ingredients = [];
         var keys = Object.keys(res.parameters);
         for (var key=1; key<=keys.length; ++key) {
