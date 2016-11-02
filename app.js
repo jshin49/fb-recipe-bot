@@ -280,7 +280,7 @@ function receivedMessage(event, res, error) {
     }
     else if (res.speechResponse == "Random") {
       spoonacular.getRandomRecipe((result) => {
-        console.log(result.body);
+        console.log("Random");
         var recipe = result.body;
         var cookingTime = recipe.recipes[0].preparationMinutes + recipe.recipes[0].cookingMinutes;
         var recipeURL = recipe.recipes[0].sourceUrl;
@@ -339,6 +339,7 @@ function receivedMessage(event, res, error) {
           var recipeIDs = [];
           var counter = 0;
           var done = false;
+          console.log("max calorie: "+max_calorie);
           for (var i=0; i<data.length; ++i) {
             recipeIDs.push(data[i].id);
           }

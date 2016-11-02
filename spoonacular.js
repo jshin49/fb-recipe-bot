@@ -50,7 +50,10 @@ module.exports = {
 	getRecipesByIngredients: function(ingredients, callback) {
     var url = SPOONACULAR_API_BASE_URL+"recipes/findByIngredients?fillIngredients=false&ingredients=";
     for (var i=0; i<ingredients.length;++i) {
-      url += ingredients[i]+"%2C";
+    	if (i <ingredients.length-1)
+      	url += ingredients[i]+"%2C+";
+      else
+      	url += ingredients[i];
     }
     url += "limitLicense=false&number=5&ranking=1";
 
