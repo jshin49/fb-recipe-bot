@@ -29,7 +29,7 @@ module.exports = {
 
 	getRecipeByID: function(id, callback) {
     unirest
-    .get(SPOONACULAR_API_BASE_URL+"recipes/random?limitLicense=false&number=1")
+    .get(SPOONACULAR_API_BASE_URL+"recipes/"+id+"/information?includeNutrition=false")
     .header("X-Mashape-Key", SPOONACULAR_API_KEY)
     .header("Accept", "application/json")
     .end(function (result) {
@@ -49,13 +49,14 @@ module.exports = {
 
 	getRecipesByIngredients: function(ingredients, callback) {
     var url = SPOONACULAR_API_BASE_URL+"recipes/findByIngredients?fillIngredients=false&ingredients=";
-    for (var i=0; i<ingredients.length;++i) {
-    	if (i <ingredients.length-1)
-      	url += ingredients[i]+"%2C+";
+  	url += ingredients[0];
+    for (var i=1; i<ingredients.length;++i) {
+    	if (i < ingredients.length-1 && ingredients[i] != '')
+      	url += "%2C+"+ingredients[i];
       else
       	url += ingredients[i];
     }
-    url += "limitLicense=false&number=5&ranking=1";
+    url += "&limitLicense=false&number=5&ranking=1";
     console.log(url);
 		unirest.get(url)
 		.header("X-Mashape-Key", SPOONACULAR_API_KEY)

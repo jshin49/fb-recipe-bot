@@ -364,8 +364,8 @@ function receivedMessage(event, res, error) {
             spoonacular.getRecipeByID(recipeIDs[id], (result) => {
               if (counter < recipeIDs.length) {
                 ++counter;
-                // console.log(result.body.recipes[0]);
-                recipes.push(result.body.recipes[0]);
+                // console.log(result.body);
+                recipes.push(result.body);
                 if (counter == recipeIDs.length)
                   done = true;
               }
@@ -438,8 +438,8 @@ function receivedMessage(event, res, error) {
             spoonacular.getRecipeByID(recipeIDs[id], (result) => {
               if (counter < recipeIDs.length) {
                 ++counter;
-                // console.log(result.body.recipes[0]);
-                recipes.push(result.body.recipes[0]);
+                // console.log(result.body);
+                recipes.push(result.body);
                 if (counter == recipeIDs.length)
                   done = true;
               }
