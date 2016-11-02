@@ -56,7 +56,7 @@ module.exports = {
       	url += ingredients[i];
     }
     url += "limitLicense=false&number=5&ranking=1";
-
+    console.log(url);
 		unirest.get(url)
 		.header("X-Mashape-Key", SPOONACULAR_API_KEY)
 		.header("Accept", "application/json")
